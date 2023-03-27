@@ -8,4 +8,6 @@
     app:layoutDescription="@xml/activity_splash_screen_scene"
     tools:context=".SplashScreen">
 
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
