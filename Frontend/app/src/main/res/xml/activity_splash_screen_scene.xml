@@ -44,4 +44,15 @@
         motion:layout_constraintStart_toStartOf="parent"
         android:scaleX="0" />
 
+    <Constraint
+        android:id="@+id/blueIcon"
+        android:scaleX="0"
+        motion:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintTop_toTopOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        android:scaleY="0" />
+
 </MotionScene>
