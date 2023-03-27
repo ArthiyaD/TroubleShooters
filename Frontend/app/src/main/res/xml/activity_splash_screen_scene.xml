@@ -23,4 +23,15 @@
         motion:layout_constraintStart_toStartOf="parent"
         android:scaleX="10" />
 
+    <Constraint
+        android:id="@+id/backgroundLayout"
+        android:scaleX="10"
+        motion:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintTop_toTopOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        android:scaleY="10" />
+
 </MotionScene>
