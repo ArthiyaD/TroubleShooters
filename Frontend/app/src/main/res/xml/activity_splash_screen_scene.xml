@@ -118,5 +118,14 @@
         motion:layout_constraintTop_toTopOf="parent"
         motion:layout_constraintStart_toStartOf="parent"
         android:scaleY="1" />
+    <Constraint
+        android:id="@+id/whiteIcon"
+        motion:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        motion:layout_constraintBottom_toBottomOf="parent"
+        motion:layout_constraintTop_toTopOf="parent"
+        motion:layout_constraintStart_toStartOf="parent"
+        android:scaleX="0" />
 
 </MotionScene>
