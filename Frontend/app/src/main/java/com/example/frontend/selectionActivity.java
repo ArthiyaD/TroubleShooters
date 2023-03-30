@@ -22,5 +22,13 @@ public class selectionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_selection);
         button = (Button) findViewById(R.id.button1);
         button1 = (Button) findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(selectionActivity.this,imageUpload.class);
+                startActivity(intent);
+            }
+        });
     }
 }
