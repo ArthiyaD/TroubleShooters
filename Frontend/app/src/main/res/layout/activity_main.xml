@@ -30,4 +30,15 @@
         android:padding="10dp"
         android:background="@android:color/transparent" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/start"
+        android:layout_below="@id/subheading"
+        android:text="Let's Get Started"
+        android:backgroundTint="#31C4F3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textSize="17dp"/>
+
 </RelativeLayout>
