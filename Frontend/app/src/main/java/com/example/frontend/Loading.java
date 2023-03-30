@@ -34,4 +34,10 @@ public class Loading extends AppCompatActivity {
 
         progressAnimation();
     }
+
+    public void progressAnimation(){
+        ProgressBarAnimation anim=new ProgressBarAnimation(this,progressBar,text,0f,100f);
+        anim.setDuration(8000);
+        progressBar.setAnimation(anim);
+    }
 }
