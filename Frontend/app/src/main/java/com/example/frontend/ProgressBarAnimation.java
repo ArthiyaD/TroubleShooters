@@ -13,5 +13,14 @@ public class ProgressBarAnimation extends Animation {
     private ProgressBar progressionBar;
     private TextView text;
     private float from;
-    private float to; 
+    private float to;
+
+    public ProgressBarAnimation (Context con, ProgressBar pro, TextView text, float from, float to){
+        this.con = con;
+        this.progressionBar = pro;
+        this.text = text;
+        this.from = from;
+        this.to= to;
+
+    }
 }
