@@ -14,4 +14,13 @@ public class selectionActivity extends AppCompatActivity {
 
     public Button button;
     public Button button1;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_selection);
+        button = (Button) findViewById(R.id.button1);
+        button1 = (Button) findViewById(R.id.button2);
+    }
 }
