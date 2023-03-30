@@ -19,5 +19,16 @@
         android:layout_marginTop="290dp"
         android:textStyle="bold"/>
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_below="@id/heading2"
+        android:layout_width="240dp"
+        android:layout_height="59dp"
+        android:text="@string/upload_image1"
+        android:backgroundTint="#31C4F3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:drawableLeft="@drawable/baseline_image_24"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
