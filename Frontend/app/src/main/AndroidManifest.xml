@@ -15,6 +15,9 @@
             android:name=".Loading"
             android:exported="false" />
         <activity
+            android:name=".selectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
