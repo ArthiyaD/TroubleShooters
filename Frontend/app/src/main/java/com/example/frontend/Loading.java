@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 public class Loading extends AppCompatActivity {
 
+    ProgressBar progressBar;
+    TextView text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
