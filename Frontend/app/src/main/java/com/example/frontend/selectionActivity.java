@@ -13,5 +13,5 @@ import android.widget.Toast;
 public class selectionActivity extends AppCompatActivity {
 
     public Button button;
-    public Button button1; 
+    public Button button1;
 }
