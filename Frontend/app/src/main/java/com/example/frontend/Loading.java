@@ -22,5 +22,16 @@ public class Loading extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loading);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        progressBar = findViewById(R.id.loading);
+        text = findViewById(R.id.loading1);
+
+        progressBar.setMax(100);
+        progressBar.setScaleY(3f);
+
+        progressAnimation();
     }
 }
