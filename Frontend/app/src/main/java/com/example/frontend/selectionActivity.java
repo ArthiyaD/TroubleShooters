@@ -30,5 +30,13 @@ public class selectionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(selectionActivity.this,videoUpload.class);
+                startActivity(intent);
+            }
+        });
     }
 }
