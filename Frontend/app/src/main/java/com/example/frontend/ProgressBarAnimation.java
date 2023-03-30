@@ -23,4 +23,17 @@ public class ProgressBarAnimation extends Animation {
         this.to= to;
 
     }
+
+    @Override
+    protected void applyTransformation(float interpolatedTime, Transformation t){
+        super.applyTransformation(interpolatedTime, t);
+        float value = from +(to - from) *interpolatedTime;
+        progressionBar.setProgress((int)value);
+        text.setText((int)value+" %");
+
+        if(value == to){
+            con.startActivity(new Intent(con, caption.class));
+        }
+
+    }
 }
