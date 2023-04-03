@@ -53,5 +53,8 @@ public class imageUpload extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
+
+        galleryButton = findViewById(R.id.galleryButton);
+        gallery = findViewById(R.id.gallery);
     }
 }
