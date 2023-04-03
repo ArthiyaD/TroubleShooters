@@ -56,5 +56,15 @@ public class imageUpload extends AppCompatActivity {
 
         galleryButton = findViewById(R.id.galleryButton);
         gallery = findViewById(R.id.gallery);
+
+        galleryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                imageLauncher.launch(Intent.createChooser(intent, "Select Picture"));
+            }
+        });
     }
 }
