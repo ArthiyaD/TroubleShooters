@@ -1,7 +1,5 @@
 package com.example.frontend;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -22,7 +20,6 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class imageUpload extends AppCompatActivity {
-
     private long backPressedTime;
 
     public Button button;
@@ -76,4 +73,6 @@ public class imageUpload extends AppCompatActivity {
             }
         });
     }
+
+
 }
