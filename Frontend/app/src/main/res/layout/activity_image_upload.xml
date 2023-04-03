@@ -38,4 +38,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="590dp"/>
 
+    <ImageView
+        android:id="@+id/gallery"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:src="@drawable/upload"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="250dp"/>
+
 </RelativeLayout>
