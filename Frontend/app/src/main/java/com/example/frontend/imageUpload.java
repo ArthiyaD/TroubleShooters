@@ -23,6 +23,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class imageUpload extends AppCompatActivity {
 
+    private long backPressedTime;
+
+    public Button button;
+    private Button galleryButton;
+    private ImageView gallery;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
