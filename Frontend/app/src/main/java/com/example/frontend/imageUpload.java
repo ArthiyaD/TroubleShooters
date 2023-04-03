@@ -66,5 +66,14 @@ public class imageUpload extends AppCompatActivity {
                 imageLauncher.launch(Intent.createChooser(intent, "Select Picture"));
             }
         });
+
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(imageUpload.this,selectButton.class);
+                startActivity(intent);
+            }
+        });
     }
 }
