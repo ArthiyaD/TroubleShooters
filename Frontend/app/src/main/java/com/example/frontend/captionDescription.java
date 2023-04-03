@@ -30,5 +30,16 @@ public class captionDescription extends AppCompatActivity {
 
         button = findViewById(R.id.imageButton);
         editText = findViewById(R.id.editTextTextMultiLine);
+
+        button.setOnClickListener(view -> {
+
+            // Get the text from the EditText
+            String textToCopy = editText.getText().toString();
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("label", textToCopy);
+            clipboard.setPrimaryClip(clip);
+            Toast.makeText(this,"The caption copied to clipboard",Toast.LENGTH_SHORT).show();
+
+        } );
     }
 }
