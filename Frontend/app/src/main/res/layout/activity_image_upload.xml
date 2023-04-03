@@ -28,4 +28,14 @@
         android:layout_marginTop="530dp"
         android:drawableLeft="@drawable/baseline_drive_folder_upload_24"/>
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:text="Generate"
+        android:textStyle="bold"
+        android:backgroundTint="#2BA8D0"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="590dp"/>
+
 </RelativeLayout>
