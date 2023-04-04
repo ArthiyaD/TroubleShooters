@@ -28,5 +28,10 @@ public class videoUpload extends AppCompatActivity implements MediaPlayer.OnPrep
 
     Button videoButton;
     VideoView gallery;
-    
+
+    @Override
+    public void onPrepared(MediaPlayer mediaPlayer) {
+        View placeholder = (View) findViewById(R.id.placeholder);
+        placeholder.setVisibility(View.GONE);
+    }
 }
