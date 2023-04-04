@@ -33,6 +33,10 @@
         android:layout_width="250dp"
         android:layout_height="55dp"
         android:text="Generate"
+        android:textStyle="bold"
+        android:backgroundTint="#2BA8D0"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="590dp"/>
 
 
     <VideoView
