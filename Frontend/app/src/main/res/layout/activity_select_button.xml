@@ -22,5 +22,9 @@
         android:layout_below="@id/button1"
         android:layout_width="240dp"
         android:layout_height="59dp"
+        android:text="Generate Captions"
+        android:backgroundTint="#2BA8D0"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp" />
 
 </RelativeLayout>
