@@ -15,6 +15,9 @@
             android:name=".caption"
             android:exported="false" />
         <activity
+            android:name=".videoUpload"
+            android:exported="false" />
+        <activity
             android:name=".imageUpload"
             android:exported="false" />
         <activity
