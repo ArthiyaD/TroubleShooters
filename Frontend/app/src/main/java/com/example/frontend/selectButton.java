@@ -10,5 +10,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class selectButton {
+public class selectButton extends AppCompatActivity {
+
+    public Button button;
+    public Button button1;
+    
 }
