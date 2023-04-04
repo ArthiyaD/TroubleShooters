@@ -17,5 +17,9 @@ public class selectButton extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);}
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_select_button);
+        button = (Button) findViewById(R.id.button1);
+        button1 = (Button) findViewById(R.id.button2);
+    }
 }
