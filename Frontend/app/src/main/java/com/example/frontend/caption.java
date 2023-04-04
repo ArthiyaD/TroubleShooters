@@ -31,12 +31,15 @@ public class caption extends AppCompatActivity {
 
         button.setOnClickListener(view -> {
 
-            // Get the text from the EditText
+            String output = editText.getText().toString();
+            if (output.isEmpty()) {
+                Toast.makeText(this, "Please upload a media", Toast.LENGTH_SHORT).show();}
+            else {
             String textToCopy = editText.getText().toString();
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("label", textToCopy);
             clipboard.setPrimaryClip(clip);
-            Toast.makeText(this,"The caption copied to clipboard",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"The caption copied to clipboard",Toast.LENGTH_SHORT).show();}
 
         } );
     }
