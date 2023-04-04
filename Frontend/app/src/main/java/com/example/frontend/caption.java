@@ -25,5 +25,8 @@ public class caption extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caption);
+
+        button = findViewById(R.id.imageButton);
+        editText = findViewById(R.id.editTextTextMultiLine);
     }
 }
