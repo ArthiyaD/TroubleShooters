@@ -22,5 +22,11 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import android.media.MediaPlayer.OnPreparedListener;
-public class videoUpload {
+public class videoUpload extends AppCompatActivity implements MediaPlayer.OnPreparedListener {
+
+    public Button button;
+
+    Button videoButton;
+    VideoView gallery;
+    
 }
