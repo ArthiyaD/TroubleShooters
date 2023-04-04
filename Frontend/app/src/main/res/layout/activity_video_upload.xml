@@ -36,4 +36,10 @@
         android:layout_width="270dp"
         android:layout_height="270dp"
 
+
+    <FrameLayout
+        android:id="@+id/placeholder"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+
 </RelativeLayout>
