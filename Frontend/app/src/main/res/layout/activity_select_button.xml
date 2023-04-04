@@ -7,4 +7,14 @@
     android:background="@drawable/selection_button"
     tools:context=".selectButton">
 
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="240dp"
+        android:layout_height="59dp"
+        android:padding="15dp"
+        android:text="Generate description"
+        android:backgroundTint="#31C4F3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="340dp"
+
 </RelativeLayout>
