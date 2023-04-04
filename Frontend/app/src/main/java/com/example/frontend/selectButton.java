@@ -29,5 +29,13 @@ public class selectButton extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(selectButton.this,loading.class);
+                startActivity(intent);
+            }
+        });
     }
 }
