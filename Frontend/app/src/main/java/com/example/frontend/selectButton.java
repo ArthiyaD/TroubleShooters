@@ -21,5 +21,13 @@ public class selectButton extends AppCompatActivity {
         setContentView(R.layout.activity_select_button);
         button = (Button) findViewById(R.id.button1);
         button1 = (Button) findViewById(R.id.button2);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(selectButton.this,captionDescription.class);
+                startActivity(intent);
+            }
+        });
     }
 }
