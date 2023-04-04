@@ -19,6 +19,16 @@
         android:layout_marginBottom="200dp"
         android:layout_alignParentBottom="true"/>
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/copy"
+        android:background="#D3E5F6"
+        android:layout_marginTop="430dp"
+        android:layout_marginLeft="350dp"/>
+
+
 
 
 </RelativeLayout>
