@@ -34,4 +34,18 @@ public class videoUpload extends AppCompatActivity implements MediaPlayer.OnPrep
         View placeholder = (View) findViewById(R.id.placeholder);
         placeholder.setVisibility(View.GONE);
     }
+
+    private ActivityResultLauncher<Intent> videoLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Uri uri = result.getData().getData();
+                        gallery.setVideoURI(uri);
+                        gallery.start();
+                    }
+                }
+            }
+    );
 }
