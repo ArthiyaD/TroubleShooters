@@ -48,4 +48,8 @@ public class videoUpload extends AppCompatActivity implements MediaPlayer.OnPrep
                 }
             }
     );
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);}
 }
