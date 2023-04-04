@@ -16,5 +16,11 @@
         android:backgroundTint="#31C4F3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="340dp"
+        />
+    <Button
+        android:id="@+id/button2"
+        android:layout_below="@id/button1"
+        android:layout_width="240dp"
+        android:layout_height="59dp"
 
 </RelativeLayout>
