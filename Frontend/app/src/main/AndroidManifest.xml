@@ -30,6 +30,9 @@
             android:name=".ProgressBarAnimation"
             android:exported="false" />
         <activity
+            android:name=".selectButton"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
