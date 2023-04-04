@@ -40,4 +40,26 @@ public class caption extends AppCompatActivity {
 
         } );
     }
+    @Override
+    public void onBackPressed() {
+        AlertDialog alertDialog = new AlertDialog.Builder(caption.this).create();
+        alertDialog.setTitle("Alert");
+        alertDialog.setMessage("Do you want to exit?");
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Yes",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finishAffinity();
+                    }
+                });
+
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "No",
+
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(caption.this,selectionActivity.class);
+                        startActivity(intent);
+                    }
+                });
+        alertDialog.show();
+    }
 }
