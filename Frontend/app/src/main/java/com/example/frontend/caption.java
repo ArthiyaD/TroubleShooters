@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 public class caption extends AppCompatActivity {
 
+    private ImageButton button;
+    private EditText editText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
