@@ -45,5 +45,8 @@
         android:id="@+id/placeholder"
         android:layout_width="270dp"
         android:layout_height="270dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="#2BA8D0"
+        android:layout_marginTop="250dp"/>
 
 </RelativeLayout>
