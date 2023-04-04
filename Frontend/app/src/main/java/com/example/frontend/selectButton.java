@@ -15,4 +15,7 @@ public class selectButton extends AppCompatActivity {
     public Button button;
     public Button button1;
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);}
 }
