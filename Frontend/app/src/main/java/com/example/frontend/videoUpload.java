@@ -51,5 +51,20 @@ public class videoUpload extends AppCompatActivity implements MediaPlayer.OnPrep
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);}
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_video_upload);
+
+        videoButton = findViewById(R.id.videoButton);
+        gallery = findViewById(R.id.gallery);
+
+        videoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("video/*");
+                videoLauncher.launch(intent);
+            }
+        });
+
+    }
 }
