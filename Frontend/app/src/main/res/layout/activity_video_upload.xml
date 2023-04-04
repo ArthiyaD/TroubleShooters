@@ -23,6 +23,10 @@
         android:layout_width="229dp"
         android:layout_height="59dp"
         android:text="Go to Gallery"
+        android:backgroundTint="#31C4F3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="530dp"
+        android:drawableLeft="@drawable/baseline_drive_folder_upload_24"/>
 
     <Button
         android:id="@+id/button2"
