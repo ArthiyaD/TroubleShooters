@@ -8,4 +8,10 @@
     android:background="@drawable/image_selecting"
     tools:context=".videoUpload">
 
+    <TextView
+        android:layout_width="220dp"
+        android:layout_height="170dp"
+        android:id="@+id/image"
+        android:text="Upload your Video, start generating.."
+
 </RelativeLayout>
