@@ -30,4 +30,10 @@
         android:layout_height="55dp"
         android:text="Generate"
 
+
+    <VideoView
+        android:id="@+id/gallery"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+
 </RelativeLayout>
