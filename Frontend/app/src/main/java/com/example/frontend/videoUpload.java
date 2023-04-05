@@ -76,3 +76,14 @@ public class videoUpload extends AppCompatActivity {
                 }
             }
     );
+    private String getFileNameFromUri(Uri uri) {
+        String fileName = null;
+        String[] projection = {MediaStore.MediaColumns.DISPLAY_NAME};
+        Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+        if (cursor != null && cursor.moveToFirst()) {
+            int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME);
+            fileName = cursor.getString(columnIndex);
+            cursor.close();
+        }
+        return fileName;
+    }
