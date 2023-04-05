@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/description"
+    android:background="@drawable/des"
     tools:context=".captionDescription">
 
     <EditText
@@ -14,9 +14,8 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        android:layout_marginTop="400dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginBottom="170dp"
+        android:layout_marginBottom="400dp"
         android:layout_alignParentBottom="true"/>
 
     <ImageButton
@@ -25,7 +24,7 @@
         android:layout_height="40dp"
         android:src="@drawable/copy"
         android:background="#D3E5F6"
-        android:layout_marginTop="380dp"
-        android:layout_marginLeft="350dp"/>
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="330dp"/>
 
 </RelativeLayout>
