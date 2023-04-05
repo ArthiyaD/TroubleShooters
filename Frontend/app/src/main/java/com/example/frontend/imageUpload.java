@@ -1,23 +1,28 @@
 package com.example.frontend;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Looper;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.app.Activity;
-import android.os.Bundle;
 import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import okhttp3.OkHttpClient;
+//You should replace the "http://your-backend-url.com/upload-image" with the actual URL of your backend endpoint that accepts the image file.
+import okhttp3.*;
 
 public class imageUpload extends AppCompatActivity {
     private long backPressedTime;
@@ -28,23 +33,35 @@ public class imageUpload extends AppCompatActivity {
 
     private ActivityResultLauncher<Intent> imageLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
-            new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                        Uri uri = result.getData().getData();
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                    if (data != null && data.getData() != null) {
+                        Uri imageUri = data.getData();
                         try {
-                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                            InputStream inputStream = getContentResolver().openInputStream(imageUri);
+                            String fileName = "IMG_" + System.currentTimeMillis() + ".jpg";
+                            File file = new File(getFilesDir(), fileName);
+                            FileOutputStream outputStream = new FileOutputStream(file);
+                            byte[] buffer = new byte[4096];
+                            int bytesRead;
+                            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                                outputStream.write(buffer, 0, bytesRead);
+                            }
+                            outputStream.close();
+                            inputStream.close();
+                            Toast.makeText(this, "Image saved to " + file.getAbsolutePath(), Toast.LENGTH_SHORT).show();
+                            Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
                             gallery.setImageBitmap(bitmap);
-                        } catch (Exception e) {
+                        } catch (IOException e) {
                             e.printStackTrace();
+                            Toast.makeText(this, "Error saving image", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
             }
-
-
     );
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +89,47 @@ public class imageUpload extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Get the file path of the saved image
+                String fileName = "IMG_" + System.currentTimeMillis() + ".jpg";
+                File file = new File(getFilesDir(), fileName);
+                String filePath = file.getAbsolutePath();
+
+                // Create a OkHttpClient to make the HTTP request
+                OkHttpClient client = new OkHttpClient();
+
+                // Create a RequestBody object with the image file
+                RequestBody requestBody = new MultipartBody.Builder()
+                        .setType(MultipartBody.FORM)
+                        .addFormDataPart("file", filePath,
+                                RequestBody.create(MediaType.parse("image/*"), new File(filePath)))
+                        .build();
+
+                // Create a POST request with the RequestBody and the API endpoint URL
+                Request request = new Request.Builder()
+                        .url("http://your-backend-url.com/upload-image")
+                        .post(requestBody)
+                        .build();
+
+                // Make the HTTP request asynchronously
+                client.newCall(request).enqueue(new Callback() {
+                    @Override
+                    public void onFailure(Call call, IOException e) {
+                        // Handle the failure case
+                        Log.e("ERROR", e.getMessage());
+                    }
+
+                    @Override
+                    public void onResponse(Call call, Response response) throws IOException {
+                        // Handle the success case
+                        String responseBody = response.body().string();
+                        Log.d("RESPONSE", responseBody);
+                    }
+                });
+            }
+        });
     }
-
-
 }

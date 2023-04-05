@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ACG_application"
         tools:targetApi="31">
         <activity
+            android:name=".videoUpload"
+            android:exported="false" />
+        <activity
             android:name=".caption"
             android:exported="false" />
         <activity
