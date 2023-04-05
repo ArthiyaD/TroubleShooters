@@ -87,3 +87,9 @@ public class videoUpload extends AppCompatActivity {
         }
         return fileName;
     }
+    private void playVideo(String videoPath) {
+        videoView.setMediaController(new MediaController(this));
+        videoView.setVideoURI(Uri.parse(videoPath));
+        videoView.requestFocus();
+        videoView.start();
+    }
