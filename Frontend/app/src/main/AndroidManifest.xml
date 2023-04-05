@@ -18,6 +18,9 @@
             android:name=".caption"
             android:exported="false" />
         <activity
+            android:name=".videoUpload"
+            android:exported="false" />
+        <activity
             android:name=".imageUpload"
             android:exported="false" />
         <activity
@@ -31,6 +34,9 @@
             android:exported="false" />
         <activity
             android:name=".ProgressBarAnimation"
+            android:exported="false" />
+        <activity
+            android:name=".selectButton"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

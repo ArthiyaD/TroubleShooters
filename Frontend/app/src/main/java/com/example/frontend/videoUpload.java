@@ -22,11 +22,57 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+
 public class videoUpload extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_upload);
-    }
-}
+    private static final String TAG = "videoUpload";
+
+    public Button button;
+    private Button videoButton;
+    private VideoView videoView;
+
+    private ActivityResultLauncher<Intent> videoLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    Intent data = result.getData();
+                    if (data != null && data.getData() != null) {
+                        // Get the video Uri from the gallery
+                        Uri videoUri = data.getData();
+
+                        // Get the file name from the video Uri
+                        String videoFileName = getFileNameFromUri(videoUri);
+
+                        // Create a new file in the app's private external storage directory
+                        File videoFile = new File(getExternalFilesDir(Environment.DIRECTORY_MOVIES), videoFileName);
+                        FileOutputStream outputStream = null;
+                        try {
+                            outputStream = new FileOutputStream(videoFile);
+                            InputStream inputStream = getContentResolver().openInputStream(videoUri);
+                            byte[] buffer = new byte[1024];
+                            int length;
+                            while ((length = inputStream.read(buffer)) > 0) {
+                                outputStream.write(buffer, 0, length);
+                            }
+                            outputStream.close();
+                            inputStream.close();
+                            // Show a Toast message indicating that the video was saved
+                            Toast.makeText(this, "Video saved to " + videoFile.getPath(), Toast.LENGTH_SHORT).show();
+
+                            // Play the saved video in the VideoView
+                            playVideo(videoFile.getPath());
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } finally {
+                            try {
+                                if (outputStream != null) {
+                                    outputStream.close();
+                                }
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
+                }
+            }
+    );
