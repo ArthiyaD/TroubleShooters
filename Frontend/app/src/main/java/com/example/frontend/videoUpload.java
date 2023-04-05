@@ -110,3 +110,13 @@ public class videoUpload extends AppCompatActivity {
                 videoLauncher.launch(Intent.createChooser(intent, "Select Video"));
             }
         });
+        button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(videoUpload.this,selectButton.class);
+                startActivity(intent);
+            }
+        });
+    }
+}
